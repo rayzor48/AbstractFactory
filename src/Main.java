@@ -14,14 +14,16 @@ public class Main {
                 factory = new Audi();
                 app = new App(factory);
                 return app;
+            default:
+                factory = new BMW();
+                app = new App(factory);
+                return app;
         }
-
-        return app ;
     }
 
     public static void main(String[] args) {
 
-
+            App app = configuration(Type.BMW);
             app.build();
     }
 }
